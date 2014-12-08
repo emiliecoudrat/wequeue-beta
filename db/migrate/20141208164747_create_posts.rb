@@ -4,6 +4,8 @@ class CreatePosts < ActiveRecord::Migration
       t.text :description
       t.integer :duration
       t.string :picture
+      t.references :user, index: true
+      t.references :line, index: true
 
       t.timestamps
     end

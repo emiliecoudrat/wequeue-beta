@@ -7,6 +7,7 @@ class CreateLines < ActiveRecord::Migration
       t.string :event
       t.date :date
       t.boolean :status
+      t.references :user, index: true
 
       t.timestamps
     end
