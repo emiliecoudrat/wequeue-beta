@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208153942) do
+ActiveRecord::Schema.define(version: 20141208164838) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
+    t.integer  "post_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "lines", force: true do |t|
     t.string   "place"
@@ -26,9 +31,12 @@ ActiveRecord::Schema.define(version: 20141208153942) do
     t.string   "event"
     t.date     "date"
     t.boolean  "status"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "lines", ["user_id"], name: "index_lines_on_user_id"
 
   create_table "places", force: true do |t|
     t.string   "name"
@@ -41,9 +49,14 @@ ActiveRecord::Schema.define(version: 20141208153942) do
     t.text     "description"
     t.integer  "duration"
     t.string   "picture"
+    t.integer  "user_id"
+    t.integer  "line_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "posts", ["line_id"], name: "index_posts_on_line_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
