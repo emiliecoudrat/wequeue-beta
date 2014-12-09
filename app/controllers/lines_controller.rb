@@ -15,6 +15,7 @@ class LinesController < ApplicationController
 
   def create
     @line = Line.new(line_params)
+    @line.user_id = current_user.id
     @line.save
     redirect_to lines_path
   end
@@ -36,6 +37,6 @@ class LinesController < ApplicationController
   end
 
   def line_params
-    params.require(:line).permit(:place, :city, :address, :date, :user_id, :id)
+    params.require(:line).permit(:place, :city, :address, :date, :user_id)
   end
 end

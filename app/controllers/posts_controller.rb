@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
-    @posts = Post.all
+    @posts = @line.post.all
   end
 
   def show
@@ -24,6 +26,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    redirect_to lines_path
   end
 
   private
@@ -33,6 +37,6 @@ class PostsController < ApplicationController
   end
 
   def line_params
-    params.require(:post).permit(:description, :picture, :post_id :user_id)
+    params.require(:post).permit(:description, :picture, :post_id, :user_id)
   end
 end
