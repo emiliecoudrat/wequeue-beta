@@ -31,8 +31,10 @@ gem 'binding_of_caller', group: :development
 gem 'better_errors', group: :development
 
 gem 'figaro'
-
 gem 'devise'
+
+gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
