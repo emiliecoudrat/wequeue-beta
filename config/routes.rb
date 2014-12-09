@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :lines
+  devise_for :users
+  get 'home/index'
 
-  resources :comments
+  resources :lines do
+    resources :comments do
+      resources :posts
+    end
+  end
 
-  resources :posts
-
+  root to: "home#index"
 end
