@@ -36,6 +36,14 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'bootstrap_form'
 
+gem 'google-webfonts-rails', '~> 0.0.4'
+gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.2.0'
+
+gem "rails-i18n", "~> 4.0.0"
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
