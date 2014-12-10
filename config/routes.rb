@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :lines do
-    resources :comments do
-      resources :posts
+    resources :posts do
+      resources :comments
     end
   end
 
