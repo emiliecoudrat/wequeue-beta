@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :lines do
-    resources :posts do
+    resources :posts
+  end
+
+  resources :posts, only: [] do
       resources :comments
-    end
   end
 
   root to: "home#index"
 end
+
