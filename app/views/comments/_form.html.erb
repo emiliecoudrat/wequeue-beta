@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
-      <%= bootstrap_form_for(new_line_post_comment_path, class: 'form') do |f| %>
+      <%= bootstrap_form_for([@post, @comment] class: 'form') do |f| %>
 
         <div class="field">
           <%= f.text_area :content %>
