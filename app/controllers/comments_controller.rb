@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to line_posts_path, notice: "Bravo, votre comment a été pris en compte"
+      redirect_to post_comments_path, notice: "Bravo, votre comment a été pris en compte"
     else
       render :new, notice: "Oups, réessayez !"
     end
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to lines_path
+    redirect_to lines_path(@line)
   end
 
   private
