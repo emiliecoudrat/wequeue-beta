@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = @line.posts.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to line_posts_path, notice: "Bravo, votre post a été pris en compte"
+      redirect_to line_path(@line), notice: "Bravo, votre post a été pris en compte"
     else
       render :new, notice: "Oups, réessayez !"
     end
