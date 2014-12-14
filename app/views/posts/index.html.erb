@@ -5,8 +5,10 @@
   <div>
     <% if @post.nil? %>
         <% @posts.each do |post| %>
-        <%= post.description %>
-        <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
+        <div>
+          <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>
+          <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
+        </div>
       <% end %>
     <% else %>
      <p>Aucun queuer n'a encore renseigné cette file d'attente. Soyez le premier à indiquer un temps d'attente !</p>
@@ -18,6 +20,10 @@
 
   <div>
     <%= link_to "Retour aux files d'attente", lines_path %>
+  </div>
+
+  <div>
+    <%= link_to "Voir les infos cette file", line_path(@line) %>
   </div>
 
 </div>

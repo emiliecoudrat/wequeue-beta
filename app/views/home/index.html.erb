@@ -1,6 +1,25 @@
-<h1>weQueue</h1>
-<p>L'info en temps sur les files d'attente</p>
+<div class= "container">
 
-<div class="btn btn-">
-<%= link_to 'Create a new line', new_line_path %>
+  <h1>weQueue</h1>
+  <h3>Queue less, live more.</h3>
+  <h4>L'info en temps sur les files d'attente</h4>
+
+  <% Line.last(5).each do |line| %>
+    <li>Date : <%= line.date %></li>
+    <li>Lieu : <%= line.place %></li>
+    <li>Evènement : <%= line.event %></li>
+    <% line.posts.last(3).each do |post| %>
+      <div>
+        <p>
+        Le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>
+        <%= link_to "Parler à ce queuer", new_post_comment_path(post) %>
+        </p>
+       </div>
+    <% end %>
+  <% end %>
+
+  <div class="btn btn-">
+  <%= link_to 'Create a new line', new_line_path %>
+  </div>
+
 </div>
