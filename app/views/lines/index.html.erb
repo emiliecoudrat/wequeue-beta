@@ -1,5 +1,22 @@
-<h1>Lines#index</h1>
-<p>Find me in app/views/lines/index.html.erb</p>
+<h1>Les dernières files d'attente renseignées.</h1>
+
+<div>
+<p><% @lines.each do |line| %>
+
+<div class= "list-inline">
+  <li><%= line.date %> - <%= line.place %></li>
+  <li>
+    <% unless line.event.nil? %>
+      <p> pour l'événement <%= line.event %> </p>
+    <% end %>
+  </li>
+  <li><%= link_to "Voir le temps d'attente", line_posts_path(line) %></li>
+  <li><%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %></li>
+
+</div>
+<% end %>
+</p>
+</div>
 
 
-<%= link_to 'Create a new line', new_line_path %>
+<%= link_to "Je crée une nouvelle file d'attente", new_line_path %>

@@ -1,2 +1,10 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+<h1>Posez vos questions au queur dans la file !</h1>
+
+<div>
+  <%= @post.description %>
+</div>
+<div>
+  <p> >> <%= @comments.last.content %> </p>
+</div>
+
+<%= link_to "Retour aux files d'attente", lines_path %>

@@ -1,6 +1,23 @@
-<h1>Voci tous les posts relatifs à la file d'attente</h1>
+<div class= "container">
 
-<% @posts.each do |post| %>
-  <%= post.description %>
-  <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
-<% end %>
+  <h1>Les temps d'attente estimés par les queuers</h1>
+
+  <div>
+    <% if @post.nil? %>
+        <% @posts.each do |post| %>
+        <%= post.description %>
+        <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
+      <% end %>
+    <% else %>
+     <p>Aucun queuer n'a encore renseigné cette file d'attente. Soyez le premier à indiquer un temps d'attente !</p>
+     <p><%= link_to "Indiquer un temps d'attente", new_line_post_path(@line) %></p>
+    <% end %>
+  </div>
+
+  </br>
+
+  <div>
+    <%= link_to "Retour aux files d'attente", lines_path %>
+  </div>
+
+</div>
