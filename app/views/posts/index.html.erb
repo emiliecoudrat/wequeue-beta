@@ -3,7 +3,7 @@
   <h1>Les temps d'attente estimés par les queuers</h1>
 
   <div>
-    <% if @post.nil? %>
+    <% if @posts.count > 0 %>
         <% @posts.each do |post| %>
         <div>
           <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>

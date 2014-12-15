@@ -2,7 +2,7 @@
 
   <h1>weQueue</h1>
   <h3>Queue less, live more.</h3>
-  <h4>L'info en temps sur les files d'attente</h4>
+  <h4>L'info en temps réel sur les files d'attente</h4>
 
   <% Line.last(5).each do |line| %>
     <li>Date : <%= line.date %></li>
@@ -16,10 +16,18 @@
         </p>
        </div>
     <% end %>
+      <div>
+        <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+      </div>
+      <br>
   <% end %>
 
-  <div class="btn btn-">
-  <%= link_to 'Create a new line', new_line_path %>
+  <div class="btn btn-success">
+  <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
+  </div>
+
+  <div class="btn btn-success">
+  <%= link_to "Voir toutes les files d'attente", lines_path %>
   </div>
 
 </div>

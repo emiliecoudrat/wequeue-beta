@@ -1,10 +1,10 @@
 <h1 class="text-center">Indiquez le temps d'attente pour <%= @line.place %> </h1>
 
 <div>
-<% if @line.event.nil? %>
-<% else %>
-<h1 class= "text-center"> pour l'événement <%= @line.event %> </h1>
-<% end %>
+  <% if @line.event.nil? %>
+    <% else %>
+     <h1 class= "text-center"> pour l'événement <%= @line.event %> </h1>
+  <% end %>
 </div>
 
 <%= render 'form' %>
