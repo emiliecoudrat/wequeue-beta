@@ -1,10 +1,22 @@
-<h1>Posez vos questions au queur dans la file !</h1>
+<div class= "container">
 
-<div>
-  <%= @post.description %>
-</div>
-<div>
-  <p> >> <%= @comments.last.content %> </p>
-</div>
+  <h1>Posez vos questions au queuer dans la file !</h1>
 
-<%= link_to "Retour aux files d'attente", lines_path %>
+  <div>
+    a <%= @post.created_at %>,
+    <%= @post.user.first_name %> a indiqué :
+    "<%= @post.description %>"
+  </div>
+  <div>
+    <% @comments.all.each do |comment| %>
+      <div>
+        A <%= comment.created_at %>
+        <%= comment.user.first_name %> :
+        <%= comment.content %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Retour aux files d'attente", lines_path %>
+
+</div>

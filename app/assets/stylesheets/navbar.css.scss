@@ -1,0 +1,22 @@
+$bg: #F15A26;
+$color: #F2EFC2;
+
+.navbar-wagon {
+  background: rgba($bg, 0.9);
+}
+
+.navbar-wagon a {
+  color: $color;
+}
+
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: $bg;
+}
+
+#wequeue {
+  color: #FFFFFF;
+}
+
+.dropdown-toggle li {
+  color: #FFFFFF;
+}

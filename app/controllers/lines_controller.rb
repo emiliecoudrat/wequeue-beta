@@ -16,8 +16,11 @@ class LinesController < ApplicationController
   def create
     @line = Line.new(line_params)
     @line.user_id = current_user.id
-    @line.save
-    redirect_to line_path(@line)
+    if @line.save
+      redirect_to line_path(@line), notice: "Bravo, votre file d'attente a été créée"
+    else
+      render :new, notice: "Oups, réessayez !"
+    end
   end
 
   def edit
