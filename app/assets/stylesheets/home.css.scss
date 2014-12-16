@@ -7,20 +7,25 @@ body {
   background-color: $color;
 }
 
-.btn-success {
-  background-color: black;
-  border-color: black;
+.btn-default {
+  background-color: #6BC5C3;
+  border-color: #F7F7F7;
+  margin-top: 10px;
 }
 
-.btn-success a {
+.btn-default a {
   color: white;
+  text-decoration: none;
 }
 
 .queue{
-  background:white;
-  margin-top:10px;
+  background: white;
+  margin-top:15px;
   border:1px solid #f3f3f3;
   border-radius: 5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .place {
@@ -30,4 +35,19 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   color: rgb(188, 188, 188);
+}
+
+.time-btn {
+  margin-bottom: 10px;
+}
+
+.btn-default.home {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  background-color: #6BC5C3;
+}
+
+.date {
+  color: #121212;
+  font-size: 16px;
 }
