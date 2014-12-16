@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209135341) do
+ActiveRecord::Schema.define(version: 20141216133752) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141209135341) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "zipcode"
   end
 
   add_index "lines", ["user_id"], name: "index_lines_on_user_id"
@@ -43,6 +44,8 @@ ActiveRecord::Schema.define(version: 20141209135341) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "zipcode"
+    t.string   "city"
   end
 
   create_table "posts", force: true do |t|
