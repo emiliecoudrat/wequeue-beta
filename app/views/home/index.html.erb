@@ -1,26 +1,33 @@
 <div class= "container">
 
-  <h1>weQueue</h1>
-  <h3>Queue less, live more.</h3>
-  <h4>L'info en temps réel sur les files d'attente</h4>
+  <h1 class= "text-center">weQueue</h1>
+ <!--  <h3>Queue less, live more.</h3>  -->
+  <h3 class= "text-center">Toute l'info en temps réel sur les files d'attente.</h3>
 
   <% Line.last(5).each do |line| %>
-    <li>Date : <%= line.date %></li>
-    <li>Lieu : <%= line.place %></li>
-    <li>Evènement : <%= line.event %></li>
-    <% line.posts.last(3).each do |post| %>
-      <div>
-        <p>
-        Le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>
-        <%= link_to "Parler à ce queuer", new_post_comment_path(post) %>
-        </p>
-       </div>
+  <div class='queue'>
+    <div class= "place"><%= line.place %></div>
+
+    <ul class="list-inline">
+
+      <li>Evènement : <%= line.event %></li>
+    </ul>
+    Le <%= line.date.strftime('%d-%m-%Y') %>
+      <% line.posts.last(3).each do |post| %>
+        <div>
+          <p>
+          Le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at.hour %>h<%= post.created_at.min %>
+          <%= link_to "Parler à ce queuer", new_post_comment_path(post) %>
+          </p>
+         </div>
+      <% end %>
+        <div>
+          <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+        </div>
+        <br>
+  </div>
+
     <% end %>
-      <div>
-        <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
-      </div>
-      <br>
-  <% end %>
 
   <div class="btn btn-success">
   <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
@@ -29,5 +36,4 @@
   <div class="btn btn-success">
   <%= link_to "Voir toutes les files d'attente", lines_path %>
   </div>
-
 </div>

@@ -1,3 +1,22 @@
+//SCSS GEMS FILES
 @import "bootstrap";
+@import "bootstrap-sprockets";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+//SCSS FILES
+@import "navbar";
+@import "footer";
+@import "home";
+@import "lines";
+@import "comments";
+@import "posts";
+@import "form";
+
+$font: 'Open Sans', sans-serif;
+$font-color: black;
+
+body {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}

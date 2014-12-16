@@ -1,0 +1,18 @@
+$height: 60px;
+$color: #F27166;
+
+footer {
+  position: fixed;
+  bottom: 0;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  display: inline;
+  background: rgba($bg, 0.9);
+  height: $height;
+}
+
+#here {
+  height: 40px;
+  margin-top: 10px;
+}

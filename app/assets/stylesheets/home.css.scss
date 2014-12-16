@@ -1,3 +1,33 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color: #F7F7F7;
+
+body {
+  background-color: $color;
+}
+
+.btn-success {
+  background-color: black;
+  border-color: black;
+}
+
+.btn-success a {
+  color: white;
+}
+
+.queue{
+  background:white;
+  margin-top:10px;
+  border:1px solid #f3f3f3;
+  border-radius: 5px;
+}
+
+.place {
+  background: rgb(232, 232, 232);
+  padding: 12px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(188, 188, 188);
+}
