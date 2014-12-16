@@ -40,6 +40,6 @@ class LinesController < ApplicationController
   end
 
   def line_params
-    params.require(:line).permit(:place, :event, :city, :address, :date, :user_id)
+    params.require(:line).permit(:place, :event, :city, :address, :zipcode, :date, :user_id)
   end
 end
