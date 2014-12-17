@@ -12,11 +12,12 @@
             <%= line.date.strftime('%d-%m-%Y') %>
           </div>
         </div>
-        <% unless line.event.nil? %>
+        <% if line.event.length == 0 %>
+          <% else %>
           <ul class="list-inline">
             <li>Evènement : <%= line.event %></li>
           </ul>
-          <% else %>
+
         <% end %>
 
 

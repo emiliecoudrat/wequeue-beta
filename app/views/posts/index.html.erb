@@ -6,6 +6,7 @@
     <% if @posts.count > 0 %>
         <% @posts.each do |post| %>
         <div>
+          <%= image_tag post.picture.url(:medium) %>
           <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>
           <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
         </div>
