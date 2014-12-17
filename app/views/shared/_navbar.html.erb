@@ -18,7 +18,7 @@
         <div class="visible-xs-block">
           <% if user_signed_in? %>
             <li>
-              <%= link_to root_path do %>
+              <%= link_to profile_path(current_user) do %>
                 <i class="fa fa-user"> Profile</i>
               <% end %>
             </li>
@@ -47,7 +47,7 @@
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
-                <%= link_to root_path do %>
+                <%= link_to profile_path(current_user) do %>
                   <i class="fa fa-user"> Profile</i>
                 <% end %>
               </li>
