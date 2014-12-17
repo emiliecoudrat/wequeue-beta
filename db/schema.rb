@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216140839) do
+ActiveRecord::Schema.define(version: 20141217104743) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20141216140839) do
     t.integer  "line_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "posts", ["line_id"], name: "index_posts_on_line_id"

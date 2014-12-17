@@ -6,7 +6,11 @@
         <%= f.hidden_field :line_id %>
 
         <div class="field">
-          <%= f.text_area :description %>
+          <%= f.text_area :description, label: "Le temps d'attente selon vous? Une autre info utile?" %>
+        </div>
+
+        <div class="field">
+          <%= f.file_field :picture, label: "Ajoutez une photo de la file d'attente" %>
         </div>
 
         <div class="actions">
@@ -14,8 +18,16 @@
         </div>
 
       <% end %>
+
+      <div>
+        <%= link_to 'Voir toutes les files', lines_path %>
+      </div>
+
+      <div>
+        <%= link_to "Page d'accueil", root_path %>
+      </div>
+
     </div>
   </div>
 </div>
 
-<%= link_to 'Voir toutes les files', lines_path %>
