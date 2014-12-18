@@ -21,7 +21,7 @@
         <% end %>
 
 
-          <% line.posts.last(3).each do |post| %>
+          <% line.posts.last(2).each do |post| %>
         <div class='post'>
           à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
           <%= link_to "Parler à ce queuer", new_post_comment_path(post) %>
