@@ -11,18 +11,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body class="pic">
 
 <!--   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> -->
-<%= render "shared/navbar" %>
-
-<%= yield %>
-
-<%= render "shared/footer" %>
-
-
+  <%= yield %>
 
 </body>
 </html>
