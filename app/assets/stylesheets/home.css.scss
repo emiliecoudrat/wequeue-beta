@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #F7F7F7;
+$yellow : #FFD620;
 
 body {
   background-color: $color;
@@ -12,6 +13,7 @@ body {
 .btn-default {
   border-color: #F7F7F7;
   margin-top: 10px;
+  background-color: $yellow;
 }
 
 .btn-default a {
