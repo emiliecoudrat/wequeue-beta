@@ -1,6 +1,8 @@
 <div class= "container">
-  <h1>Les dernières files d'attente renseignées.</h1>
+<div class= "row">
 
+  <div class= "col-xs-offset-1 col-xs-10">
+  <h1>Les dernières files d'attente renseignées.</h1>
   <div>
   <p><% @lines.each do |line| %>
 
@@ -19,8 +21,13 @@
   </p>
   </div>
 
+  <div>
+    <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
+  </div>
 
-  <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
-
+  <div>
   <%= link_to "Page d'accueil", root_path %>
+  </div>
+</div>
+</div>
 </div>

@@ -1,0 +1,53 @@
+$title-font: 'Chivo', sans-serif;
+$yellow : #FFD620;
+
+
+h1 {
+  font-family: $title-font;
+  font-weight: 900;
+  font-size: 7rem;
+  color: $yellow;
+  text-shadow: 1px 0.6px 3px black;
+}
+
+h4 {
+  color: $yellow;
+  text-shadow: 1px 0.8px 3px black;
+}
+
+.field {
+  color: black;
+}
+
+.signin {
+  margin-top: 30px;
+  border: 1px solid none;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(white, 0.5);
+}
+
+.pic {
+  background-image: image-url('queue.jpg');
+  background-size: cover;
+  background-position: top right;
+}
+
+.devise {
+  background-color: black;
+  border-color: #cccccc;
+  margin-top: 0px;
+}
+
+
+.btn-default a {
+  color: white;
+  text-decoration: none;
+}
+
+#fb {
+  background-color: #415e9b;
+  margin-top: 0px;
+  border-color: #cccccc;
+}
+
