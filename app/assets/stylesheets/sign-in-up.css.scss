@@ -1,17 +1,19 @@
-$title-font: 'Chivo', sans-serif;
+$title-font:'Pacifico', cursive;
 $yellow : #FFD620;
+$light-grey: #7F7F7F;
+$green : #6BC5C3;
 
 
 h1 {
   font-family: $title-font;
   font-weight: 900;
-  font-size: 7rem;
+  font-size: 9rem;
   color: $yellow;
   text-shadow: 1px 0.6px 3px black;
 }
 
 h4 {
-  color: $yellow;
+  color: white;
   text-shadow: 1px 0.8px 3px black;
 }
 
@@ -24,7 +26,23 @@ h4 {
   border: 1px solid none;
   border-radius: 10px;
   padding: 20px;
-  background-color: rgba(white, 0.5);
+  background-color: rgba(black, 0.6);
+}
+
+.signin label {
+  color: white;
+}
+
+.signin a {
+  color: white;
+}
+
+.btn-default {
+  color: black;
+}
+
+.btn-default:hover {
+  background-color: $yellow;
 }
 
 .pic {
@@ -34,9 +52,14 @@ h4 {
 }
 
 .devise {
-  background-color: black;
-  border-color: #cccccc;
+  background-color: transparent;
+  border-color: white;
   margin-top: 0px;
+}
+
+.devise:hover {
+  background-color: transparent;
+  border-color: white;
 }
 
 
@@ -46,8 +69,8 @@ h4 {
 }
 
 #fb {
-  background-color: #415e9b;
+  background-color: transparent;
   margin-top: 0px;
-  border-color: #cccccc;
+  border-color: white;
 }
 
