@@ -2,8 +2,9 @@
   <div class= "row">
     <div class='col-xs-offset-1 col-xs-10' >
 
-    <h3>Toute l'info en temps réel sur les files d'attente.</h3>
+    <h3>Les dernières files d'attente renseignées par les Queuers.</h3>
 
+    <% unless Post.nil? %>
       <% Line.last(5).each do |line| %>
 
       <div class='queue'>
@@ -23,8 +24,17 @@
 
           <% line.posts.last(2).each do |post| %>
         <div class='post'>
-          à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+          <div>
+            <% if post.picture.exists? %>
+              <%= image_tag post.picture.url(:thumb), class: "img-thumbnail" %>
+            <% end %>
+          </div>
+          <div>
+            le <%= post.created_at.strftime('%d-%m-%Y') %>
+            à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+          </div>
           <%= link_to "Parler à ce queuer", new_post_comment_path(post) %>
+          <br>
         </div>
         <% end %>
         <div class='btn btn-default time-btn'>
@@ -34,6 +44,7 @@
         <br>
       </div>
 
+    <% end %>
     <% end %>
 
     <div class="btn btn-default home">

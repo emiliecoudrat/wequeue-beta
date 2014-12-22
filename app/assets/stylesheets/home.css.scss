@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #F7F7F7;
 $yellow : #FFD620;
+$dark-grey : #676767;
 
 body {
   background-color: $color;
@@ -47,7 +48,7 @@ body {
 .btn-default.home {
   margin-top: 30px;
   margin-bottom: 10px;
-  background-color: #6BC5C3;
+  background-color: $dark-grey;
 }
 
 .date {
