@@ -4,11 +4,25 @@
 $color: #F7F7F7;
 $yellow : #FFD620;
 $dark-grey : #676767;
+$title-font:'Pacifico', cursive;
 
 body {
   background-color: $color;
   margin-top: 50px;
   margin-bottom: 80px;
+}
+
+.title {
+  font-size: 4rem;
+  color: $dark-grey;
+  text-shadow: none;
+  margin-bottom: 30px;
+}
+
+#event {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .btn-default {
@@ -24,7 +38,7 @@ body {
 
 .queue{
   background: white;
-  margin-top:15px;
+  margin-top:20px;
   border:1px solid #f3f3f3;
   border-radius: 5px;
   width: 80%;
@@ -58,4 +72,8 @@ body {
 
 #text {
   padding-top: 20px;
+}
+
+.fa-comment-o {
+  color: $yellow;
 }

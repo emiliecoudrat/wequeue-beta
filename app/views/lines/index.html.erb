@@ -1,33 +1,37 @@
 <div class= "container">
-<div class= "row">
+  <div class= "row">
 
-  <div class= "col-xs-offset-1 col-xs-10">
-  <h1>Les dernières files d'attente renseignées.</h1>
-  <div>
-  <p><% @lines.each do |line| %>
+    <div class= "col-xs-offset-1 col-xs-10">
+      <h1 class= "text-center title">Toutes les files d'attente en cours.</h1>
+      <div>
+        <% @lines.each do |line| %>
 
-  <div class= "list-inline">
-    <li><%= line.date %> - <%= line.place %></li>
-    <li>
-      <% unless line.event.nil? %>
-        <p> pour l'événement <%= line.event %> </p>
-      <% end %>
-    </li>
-    <li><%= link_to "Voir le temps d'attente", line_posts_path(line) %></li>
-    <li><%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %></li>
+        <div class= "list-inline">
+          <li><%= line.date %> - <%= line.place %></li>
+          <li>
+            <% unless line.event.nil? %>
+              <p> pour l'événement <%= line.event %> </p>
+            <% end %>
+          </li>
+          <li><%= link_to "Voir le temps d'attente", line_posts_path(line) %></li>
+          <li><%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %></li>
 
+        </div>
+
+        <% end %>
+      </div>
+
+      <div class= "text-center">
+        <div class="btn btn-default home">
+          <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
+        </div>
+
+
+        <div class="btn btn-default home">
+          <%= link_to "Page d'accueil", root_path %>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <% end %>
-  </p>
-  </div>
-
-  <div>
-    <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
-  </div>
-
-  <div>
-  <%= link_to "Page d'accueil", root_path %>
-  </div>
-</div>
-</div>
 </div>
