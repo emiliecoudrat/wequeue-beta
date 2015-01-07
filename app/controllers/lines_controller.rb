@@ -2,7 +2,7 @@ class LinesController < ApplicationController
   before_action :set_line, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lines = Line.all
+    @lines = Line.all.order('lines.date DESC')
   end
 
   def show

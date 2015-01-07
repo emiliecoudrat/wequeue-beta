@@ -8,8 +8,8 @@
         <div>
 
           <%= image_tag post.picture.url(:thumb), class: "img-thumbnail" %>
-          Le <%= post.created_at.strftime('%d-%m-%Y') %>
-          à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+          Le <%= post.created_at.strftime('%d/%m/%Y') %>
+          à <%= post.created_at.strftime('%Hh%M') %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
 
           <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
                 <i class="fa fa-comment-o fa-2x"></i>
