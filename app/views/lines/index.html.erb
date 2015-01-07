@@ -3,23 +3,32 @@
 
     <div class= "col-xs-offset-1 col-xs-10">
       <h1 class= "text-center title">Toutes les files d'attente en cours.</h1>
-      <div>
-        <% @lines.each do |line| %>
 
-        <div class= "list-inline">
-          <li><%= line.date %> - <%= line.place %></li>
-          <li>
+      <% @lines.each do |line| %>
+
+        <div class="queue text-center">
+          <div class= "place">
+            <%= line.place %>
             <% unless line.event.nil? %>
-              <p> pour l'événement <%= line.event %> </p>
-            <% end %>
-          </li>
-          <li><%= link_to "Voir le temps d'attente", line_posts_path(line) %></li>
-          <li><%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %></li>
+                <p> pour l'événement <%= line.event %> </p>
+              <% end %>
+            <div class="date">
+              <%= line.date %>
+            </div>
+          </div>
+
+
+            <div class='btn btn-default time-btn'>
+              <%= link_to "Voir le temps d'attente", line_posts_path(line) %>
+            </div>
+            <div class='btn btn-default time-btn'>
+              <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+            </div>
+
 
         </div>
+      <% end %>
 
-        <% end %>
-      </div>
 
       <div class= "text-center">
         <div class="btn btn-default home">
@@ -33,5 +42,6 @@
       </div>
 
     </div>
+
   </div>
 </div>

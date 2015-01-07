@@ -1,14 +1,19 @@
 <div class= "container">
 
-  <h1>Les temps d'attente estimés par les queuers</h1>
+  <h1 class="title">Les temps d'attente estimés par les queuers pour <%= @line.place %> et l'événement <%= @line.event %> </h1>
 
   <div>
     <% if @posts.count > 0 %>
         <% @posts.each do |post| %>
         <div>
-          <%= image_tag post.picture.url(:medium) %>
-          <%= post.user.first_name %> a indiqué : "<%= post.description %>" à <%= post.created_at %>
-          <%= link_to "Poser une question au queuer", new_post_comment_path(post) %>
+
+          <%= image_tag post.picture.url(:thumb), class: "img-thumbnail" %>
+          Le <%= post.created_at.strftime('%d-%m-%Y') %>
+          à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+
+          <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
+                <i class="fa fa-comment-o fa-2x"></i>
+              <% end %>
         </div>
       <% end %>
     <% else %>
@@ -19,11 +24,15 @@
 
   </br>
 
-  <div>
+  <div class='btn btn-default time-btn'>
     <%= link_to "Retour aux files d'attente", lines_path %>
   </div>
 
-  <div>
+  <div class='btn btn-default time-btn'>
+    <%= link_to "Je mets à jour le temps d'attente", new_line_post_path(@line) %>
+  </div>
+
+  <div class='btn btn-default time-btn'>
     <%= link_to "Voir les infos cette file", line_path(@line) %>
   </div>
 
