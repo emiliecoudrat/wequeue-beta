@@ -13,7 +13,7 @@
                 <p> pour l'événement <%= line.event %> </p>
               <% end %>
             <div class="date">
-              <%= line.date %>
+              <%= line.date.strftime('%d-%m-%Y') %>
             </div>
           </div>
 

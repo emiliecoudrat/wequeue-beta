@@ -4,7 +4,7 @@
 
     <h1 class="title">Les dernières files d'attente renseignées par les Queuers.</h1>
 
-      <% Line.last(5).each do |line| %>
+      <% @lines.each do |line| %>
 
       <div class='queue'>
         <div class= "place"><%= line.place %>
@@ -12,7 +12,7 @@
             <%= line.date.strftime('%d-%m-%Y') %>
           </div>
         </div>
-        <% if line.event.length == 0 %>
+        <% if line.event.nil? %>
           <% else %>
           <div class="list-inline" id="event">
             Evènement : <%= line.event %>
@@ -21,13 +21,13 @@
         <% end %>
 
 
-          <% line.posts.last(2).each do |post| %>
+          <% line.posts.order('posts.created_at DESC').last(2).each do |post| %>
         <div class='post'>
           <div class="row">
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-6" id="text">
 
-              le <%= post.created_at.strftime('%d-%m-%Y') %>
-              à <%= post.created_at.hour %>h<%= post.created_at.min %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+              le <%= post.created_at.strftime('%d/%m/%Y') %>
+              à <%= post.created_at.strftime('%Hh%M') %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
               <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
                 <i class="fa fa-comment-o fa-2x"></i>
               <% end %>
