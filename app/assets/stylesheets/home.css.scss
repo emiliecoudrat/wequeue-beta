@@ -3,11 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #F7F7F7;
 $yellow : #FFD620;
+$dark-grey : #676767;
+$title-font:'Pacifico', cursive;
 
 body {
   background-color: $color;
   margin-top: 50px;
   margin-bottom: 80px;
+}
+
+.title {
+  font-size: 3rem;
+  color: $dark-grey;
+  text-shadow: none;
+  margin-bottom: 30px;
+}
+
+#event {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .btn-default {
@@ -23,7 +38,7 @@ body {
 
 .queue{
   background: white;
-  margin-top:15px;
+  margin-top:20px;
   border:1px solid #f3f3f3;
   border-radius: 5px;
   width: 80%;
@@ -47,10 +62,18 @@ body {
 .btn-default.home {
   margin-top: 30px;
   margin-bottom: 10px;
-  background-color: #6BC5C3;
+  background-color: $dark-grey;
 }
 
 .date {
   color: #121212;
   font-size: 16px;
+}
+
+#text {
+  padding-top: 20px;
+}
+
+.fa-comment-o {
+  color: $yellow;
 }

@@ -1,6 +1,7 @@
 $bg: #6BC5C3;
 $color: #F2EFC2;
 $yellow : #FFD620;
+$title-font:'Pacifico', cursive;
 
 .navbar-wagon {
   background: rgba($yellow, 0.9);
@@ -11,13 +12,16 @@ $yellow : #FFD620;
 }
 
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: $bg;
+  background-color: $yellow;
 }
 
 #wequeue {
   color: #FFFFFF;
   margin-right: auto;
   margin-left: auto;
+  font-family: $title-font;
+  font-weight: 900;
+  font-size: 3rem;
 }
 
 .dropdown-toggle li {

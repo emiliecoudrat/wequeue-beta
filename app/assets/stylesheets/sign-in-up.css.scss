@@ -2,12 +2,12 @@ $title-font:'Pacifico', cursive;
 $yellow : #FFD620;
 $light-grey: #7F7F7F;
 $green : #6BC5C3;
-
+$font: 'Open Sans', sans-serif;
 
 h1 {
-  font-family: $title-font;
+  font-family: $font;
   font-weight: 900;
-  font-size: 9rem;
+  font-size: 7rem;
   color: $yellow;
   text-shadow: 1px 0.6px 3px black;
 }
@@ -15,6 +15,10 @@ h1 {
 h4 {
   color: white;
   text-shadow: 1px 0.8px 3px black;
+}
+
+.weq {
+  font-family: $title-font;
 }
 
 .field {

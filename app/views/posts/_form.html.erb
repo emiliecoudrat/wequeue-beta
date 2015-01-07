@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container post-form">
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4">
       <%= bootstrap_form_for([@line, @post], class: 'form') do |f| %>
@@ -6,24 +6,24 @@
         <%= f.hidden_field :line_id %>
 
         <div class="field">
-          <%= f.text_area :description, label: "Le temps d'attente selon vous? Une autre info utile?" %>
+          <%= f.text_area :description, label: "Le temps d'attente selon vous? Une info utile?" %>
         </div>
 
         <div class="field">
           <%= f.file_field :picture, label: "Ajoutez une photo de la file d'attente" %>
         </div>
 
-        <div class="actions">
-          <%= f.submit %>
+        <div class="actions text-center">
+          <%= f.submit "Je valide" %>
         </div>
 
       <% end %>
 
-      <div>
-        <%= link_to 'Voir toutes les files', lines_path %>
+      <div class="btn btn-default home">
+        <%= link_to "Voir toutes les files d'attente", lines_path %>
       </div>
 
-      <div>
+      <div class="btn btn-default home">
         <%= link_to "Page d'accueil", root_path %>
       </div>
 

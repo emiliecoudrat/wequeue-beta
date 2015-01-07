@@ -1,3 +1,7 @@
-<h1>Posez une question à ce queuer !</h1>
+<div class= "container">
 
-<%= render 'form' %>
+  <h1 class= "text-center title">Posez une question à <%= @post.user.first_name %></h1>
+
+  <%= render 'form' %>
+
+</div>
