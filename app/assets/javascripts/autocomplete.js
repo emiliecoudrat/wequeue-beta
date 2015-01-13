@@ -15,10 +15,10 @@ function onPlaceChanged() {
   var locality = '';
   var postal_code = '';
 
- for (var i in place.address_components) {
+  for (var i in place.address_components) {
     var component = place.address_components[i];
-    for (var j in component.types) {  // Some types are ["country", "political"]
-       if (component.types[j] == 'street_number') {
+    for (var j in component.types) {
+      if (component.types[j] == 'street_number') {
         street_number = component.long_name;
       } else if (component.types[j] == 'route') {
         route = component.long_name;
@@ -29,6 +29,7 @@ function onPlaceChanged() {
       }
     }
   }
+
 
 $('#user_input_autocomplete_establishment').val(place.name);
 $('#address').val(street_number + ' ' + route);
