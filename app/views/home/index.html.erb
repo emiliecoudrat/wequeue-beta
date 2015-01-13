@@ -7,7 +7,7 @@
       <% @lines.each do |line| %>
 
       <div class='queue'>
-        <div class= "place"><%= line.place %>
+        <div class= "place"><%= line.place %> | <%= line.city %>
           <div class="date">
             <%= line.date.strftime('%d-%m-%Y') %>
           </div>
