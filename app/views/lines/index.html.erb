@@ -8,7 +8,7 @@
 
         <div class="queue text-center">
           <div class= "place">
-            <%= line.place %> | <%= line.city %>
+            <%= link_to line.place, line_path(line) %> | <%= line.city %>
             <% if line.event.nil? %>
               <% else %>
                 <p> pour l'événement <%= line.event %> </p>

@@ -1,34 +1,49 @@
 <div class="container">
   <div class="row">
     <div class='col-xs-offset-1 col-xs-10' >
-      <h1 class="title">
-      Les infos sur la file d'attente ayant lieu à <%= @line.place %> et l'événement <%= @line.event %> le <%= @line.date %>
+      <h1 class="title text-center">
+      Le <%= @line.date.strftime('%d-%m-%Y') %> à <%= @line.place %>
+      <% if @line.event.length == 0 %>
+        <% else %>
+        pour l'événement <%= @line.event %>
+      <% end %>
       </h1>
-
 
       <% @line.posts.all.each do |post| %>
         <div>
-          A <%= post.created_at %>,
-          <%= post.user.first_name %> a écrit :
-          <%= post.description %>
           <% if post.picture.exists? %>
             <%= image_tag post.picture.url(:thumb) %>
           <% end %>
-          <%= link_to "Je pose une question au queuer", new_post_comment_path(@line, @post) %>
+          Le <%= post.created_at.strftime('%d/%m/%Y') %>, à <%= post.created_at.strftime('%Hh%M') %>,
+          <%= post.user.first_name %> a écrit :
+          <%= post.description %>
+
+          <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
+            <i class="fa fa-comment-o fa-2x"></i>
+          <% end %>
+
         </div>
       <% end %>
 
       <br>
 
-      <div>
+      <div class="line_address">
+        <%= @line.address %>, <%= @line.zipcode %> - <%= @line.city %>
+      </div>
+
+
+      <br>
+
+      <div class='btn btn-default home'>
         <%= link_to "Je mets à jour le temps d'attente", new_line_post_path(@line) %>
       </div>
-      <div>
-        <%= link_to "Revenir aux files d'attente", lines_path %>
+      <div class="btn btn-default home">
+        <%= link_to "Voir toutes les files d'attente", lines_path %>
       </div>
-      <div>
+      <div class="btn btn-default home">
         <%= link_to "Page d'accueil", root_path %>
       </div>
+
     </div>
   </div>
 </div>
