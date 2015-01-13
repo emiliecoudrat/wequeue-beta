@@ -8,8 +8,9 @@
 
         <div class="queue text-center">
           <div class= "place">
-            <%= line.place %>
-            <% unless line.event.nil? %>
+            <%= line.place %> | <%= line.city %>
+            <% if line.event.nil? %>
+              <% else %>
                 <p> pour l'événement <%= line.event %> </p>
               <% end %>
             <div class="date">
