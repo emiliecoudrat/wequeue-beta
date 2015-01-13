@@ -4,11 +4,11 @@
       <%= bootstrap_form_for(@line, class: 'form') do |f| %>
 
         <div class="field">
-          <%= f.text_field :place, label: "Lieu" %>
+          <%= f.text_field :place, label: "Lieu", id:"user_input_autocomplete_establishment" %>
         </div>
 
         <div class="field">
-          <%= f.text_field :address, label: "Adresse", id: "user_input_autocomplete_address" %>
+          <%= f.text_field :address, label: "Adresse", id:"address" %>
         </div>
 
         <div class="field">
