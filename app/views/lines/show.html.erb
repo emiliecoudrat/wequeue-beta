@@ -3,7 +3,7 @@
     <div class='col-xs-offset-1 col-xs-10' >
       <h1 class="title text-center">
       Le <%= @line.date.strftime('%d-%m-%Y') %> à <%= @line.place %>
-      <% if @line.event.length == 0 %>
+      <% if @line.event.nil? %>
         <% else %>
         pour l'événement <%= @line.event %>
       <% end %>
@@ -33,6 +33,21 @@
 
 
       <br>
+
+      <div id="map" style="width: 50%; height: 300px;"></div>
+
+      <% content_for(:js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
+      <% end %>
 
       <div class='btn btn-default home'>
         <%= link_to "Je mets à jour le temps d'attente", new_line_post_path(@line) %>

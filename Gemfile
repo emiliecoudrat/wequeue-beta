@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -49,6 +50,8 @@ gem 'aws-sdk'
 gem 'paperclip'
 
 gem 'geocoder'
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

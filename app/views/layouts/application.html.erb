@@ -9,7 +9,6 @@
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -29,7 +28,12 @@
 
 <script type="text/javascript" src="autocomplete.js"></script>
 
+
+<%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
 <%= javascript_include_tag "application" %>
+
+<%= yield(:js) %>
 
 </body>
 </html>

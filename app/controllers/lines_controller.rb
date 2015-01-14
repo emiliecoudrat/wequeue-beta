@@ -3,9 +3,19 @@ class LinesController < ApplicationController
 
   def index
     @lines = Line.all.order('lines.date DESC')
+
+    @markers = Gmaps4rails.build_markers(@lines) do |line, marker|
+      marker.lat line.latitude
+      marker.lng line.longitude
+    end
   end
 
   def show
+
+    @markers = Gmaps4rails.build_markers(@line) do |line, marker|
+      marker.lat line.latitude
+      marker.lng line.longitude
+    end
 
   end
 
