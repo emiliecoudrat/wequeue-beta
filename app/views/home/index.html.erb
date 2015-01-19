@@ -7,7 +7,7 @@
       <% @lines.each do |line| %>
 
       <div class='queue'>
-        <div class= "place"><%= line.place %> | <%= line.city %>
+        <div class= "place"><%= link_to line.place, line_path(line) %> | <%= line.city %>
           <div class="date">
             <%= line.date.strftime('%d-%m-%Y') %>
           </div>
@@ -43,7 +43,9 @@
         <% end %>
 
         <div class='btn btn-default time-btn'>
-          <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+          <%= link_to new_line_post_path(line) do %>
+            Mettre à jour le temps <i class="fa fa-clock-o fa-2x"></i>
+          <% end %>
         </div>
 
         <br>
