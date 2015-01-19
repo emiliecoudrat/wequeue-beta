@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: $dark-grey;
   text-shadow: none;
   margin-bottom: 30px;
@@ -36,7 +36,7 @@ body {
   text-decoration: none;
 }
 
-.queue{
+.queue {
   background: white;
   margin-top:20px;
   border:1px solid #f3f3f3;
@@ -55,8 +55,18 @@ body {
   color: rgb(105, 105, 105);
 }
 
+.place a{
+  text-decoration: none;
+  color: $dark-grey;
+}
+
+.place a:hover{
+  color: $yellow;
+}
+
 .time-btn {
   margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .btn-default.home {
@@ -76,4 +86,11 @@ body {
 
 .fa-comment-o {
   color: $yellow;
+}
+
+#line-comment {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
 }

@@ -43,7 +43,9 @@
         <% end %>
 
         <div class='btn btn-default time-btn'>
-          <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+          <%= link_to new_line_post_path(line) do %>
+            Mettre à jour le temps <i class="fa fa-clock-o fa-2x"></i>
+          <% end %>
         </div>
 
         <br>

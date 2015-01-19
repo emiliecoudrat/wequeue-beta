@@ -2,39 +2,52 @@
   <div class="row">
     <div class='col-xs-offset-1 col-xs-10' >
       <h1 class="title text-center">
-      Le <%= @line.date.strftime('%d-%m-%Y') %> à <%= @line.place %>
-      <% if @line.event.nil? %>
-        <% else %>
-        pour l'événement <%= @line.event %>
-      <% end %>
+      <div><%= @line.date.strftime('%d-%m-%Y') %> || <%= @line.place %></div>
+      <div>
+        <% if @line.event.nil? %>
+          <% else %>
+          Evénement: <%= @line.event %>
+        <% end %>
+      </div>
       </h1>
 
       <% @line.posts.all.each do |post| %>
-        <div>
-          <% if post.picture.exists? %>
-            <%= image_tag post.picture.url(:thumb) %>
-          <% end %>
-          Le <%= post.created_at.strftime('%d/%m/%Y') %>, à <%= post.created_at.strftime('%Hh%M') %>,
-          <%= post.user.first_name %> a écrit :
-          <%= post.description %>
+        <div class='row'>
+          <div class='col-xs-12 col-md-6 text-center'>
+            <% if post.picture.exists? %>
+              <%= image_tag post.picture.url(:medium), class: "img-thumbnail" %>
+            <% end %>
+          </div>
+          <br>
+          <div class='col-xs-12 col-md-6 text-center' id='line-comment'>
+            Le <%= post.created_at.strftime('%d/%m/%Y') %>, à <%= post.created_at.strftime('%Hh%M') %>,
+            <%= post.user.first_name %> a écrit :
+            <%= post.description %>
 
-          <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
-            <i class="fa fa-comment-o fa-2x"></i>
+            <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
+              <i class="fa fa-comment-o fa-2x"></i>
+            <div class='btn btn-default time-btn'>
+              <%= link_to new_line_post_path(@line) do %>
+                Mettre à jour le temps <i class="fa fa-clock-o fa-2x"></i>
+              <% end %>
+            </div>
+          </div>
           <% end %>
 
         </div>
       <% end %>
 
       <br>
+      <br>
 
       <div class="line_address">
-        <%= @line.address %>, <%= @line.zipcode %> - <%= @line.city %>
+        Pour s'y rendre: <%= @line.address %>, <%= @line.zipcode %> - <%= @line.city %>
       </div>
 
 
       <br>
 
-      <div id="map" style="width: 50%; height: 300px;"></div>
+      <div id="map" class= "texte-center" style="width: 90%; height: 300px;"></div>
 
       <% content_for(:js) do %>
         <%= javascript_tag do %>
@@ -49,14 +62,17 @@
         <% end %>
       <% end %>
 
-      <div class='btn btn-default home'>
-        <%= link_to "Je mets à jour le temps d'attente", new_line_post_path(@line) %>
+      <div class='text-center'>
+        <div class="btn btn-default home">
+          <%= link_to lines_path do %>
+            <i class="fa fa-eye"></i> Toutes les files d'attente
+          <% end %>
+        </div>
+        <div class="btn btn-default home">
+          <%= link_to root_path do %>
+          <i class="fa fa-home"></i>  Accueil
+          <% end %>
       </div>
-      <div class="btn btn-default home">
-        <%= link_to "Voir toutes les files d'attente", lines_path %>
-      </div>
-      <div class="btn btn-default home">
-        <%= link_to "Page d'accueil", root_path %>
       </div>
 
     </div>
