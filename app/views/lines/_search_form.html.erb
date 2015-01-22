@@ -1,31 +1,44 @@
-<div class="text-center ">
-
+<div class="container search">
   <div class="row">
-
     <div class="col-xs-offset-1 col-xs-10">
-      <%= form_tag lines_path, method: "get" do %>
-      <div class="form-inline" role="form">
-
-        <div class="form-group">
-          <%= label_tag(:place, "Rechercher par lieu") %>
-          <br>
-          <%= text_field_tag(:place, nil, class: 'form-control', id:"user_input_autocomplete_establishment")  %>
-        </div>
-
-<!--         <div class="form-group">
-          <%= label_tag(:event, "ou par évènement") %>
-          <br>
-          <%= text_field_tag(:event, nil, class: 'form-control')  %>
-        </div>
- -->
-        <%= submit_tag("Lancer la recherche",  class: 'form-control btn btn-default search-btn') %>
-
+      <div class="input-group">
+        <input class="form-control typeahead" type="text" id="query" placeholder="Search for Queues" autocomplete="off" spellcheck="false" autocapitalize="off"></input>
       </div>
-      <% end %>
-
     </div>
-
   </div>
-
 </div>
 
+<!-- JQuery -->
+<script src="//cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+<!-- Typahead.js is used to display the auto-completion menu -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+<!-- Algolia -->
+<script src="//cdn.jsdelivr.net/algoliasearch/latest/algoliasearch.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    // Replace the following values by your ApplicationID and ApiKey.
+    var algolia = new AlgoliaSearch('<%= ENV['ALGOLIA_SEARCH_ID'] %>', '<%= ENV['ALGOLIA_SEARCH_API_KEY'] %>');
+    // replace YourIndexName by the name of the index you want to query.
+    var index = algolia.initIndex('Line<%=ENV['ALGOLIA_SUFFIX']%>');
+
+    // typeahead.js initialization
+    $('#query').typeahead({ hint: false }, {
+      source: index.ttAdapter({ hitsPerPage: 5 }),
+      displayKey: function(hit) {
+        return hit.place + " " + hit.address;
+      },
+      templates: {
+        suggestion: function(hit) {
+          // render the hit
+          return '<div class="hit">' +
+            '<div class="name">' +
+              hit._highlightResult.place.value + ' ' + hit._highlightResult.address.value +
+            '</div>' +
+          '</div>';
+        }
+      }
+    }).bind('typeahead:selected', function(event, hit) {
+        window.location = '<%= line_path(":id") %>'.replace(':id', hit.id);
+    });
+  });
+</script>
