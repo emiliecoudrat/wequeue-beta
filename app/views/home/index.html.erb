@@ -1,8 +1,15 @@
 <div class= "container text-center">
   <div class= "row">
-    <div class='col-xs-offset-1 col-xs-10' >
 
-    <h1 class="title">Les dernières files d'attente renseignées par les Queuers.</h1>
+    <div class="col-xs-offset-1 col-xs-10">
+      <h1 class="title">Les dernières files d'attente en cours.</h1>
+
+      <div class="search">
+        <%= render 'lines/search_form'%>
+      </div>
+    </div>
+
+    <div class='col-xs-12' >
 
       <% @lines.each do |line| %>
 
@@ -14,14 +21,14 @@
         </div>
         <% if line.event.nil? %>
           <% else %>
-          <div class="list-inline" id="event">
+          <div class="list-inline" id="events">
             Evènement : <%= line.event %>
           </div>
 
         <% end %>
 
 
-          <% line.posts.order('posts.created_at DESC').last(2).each do |post| %>
+      <% line.posts.order('posts.created_at DESC').last(2).each do |post| %>
         <div class='post'>
           <div class="row">
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-6" id="text">
@@ -53,11 +60,15 @@
     <% end %>
 
     <div class="btn btn-default home">
-      <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
+      <%= link_to new_line_path do %>
+        <i class="fa fa-pencil"></i> Créer une nouvelle file d'attente
+      <% end %>
     </div>
 
     <div class="btn btn-default home">
-      <%= link_to "Voir toutes les files d'attente", lines_path %>
+      <%= link_to lines_path do %>
+        <i class="fa fa-eye"></i> Voir toutes les files d'attente
+      <% end %>
     </div>
 
     </div>

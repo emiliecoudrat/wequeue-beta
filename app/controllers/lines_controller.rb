@@ -2,12 +2,27 @@ class LinesController < ApplicationController
   before_action :set_line, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lines = Line.all.order('lines.date DESC')
+  @place = params[:place]
+  # @event = params[:event]
+
+    if @place.present?
+      @lines = Line.where("place LIKE ?", @place)
+      else
+        @lines = Line.all.order('lines.date DESC')
+    end
+
+    # if @event.present?
+    #   @lines = Line.where("event LIKE ?", @event)
+    #   else
+    #     @lines = Line.all.order('lines.date DESC')
+    # end
+
 
     @markers = Gmaps4rails.build_markers(@lines) do |line, marker|
       marker.lat line.latitude
       marker.lng line.longitude
     end
+
   end
 
   def show

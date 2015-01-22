@@ -19,7 +19,7 @@ body {
   margin-bottom: 30px;
 }
 
-#event {
+#events {
   margin-top: 10px;
   font-weight: 700;
   font-size: 1.5rem;
@@ -69,8 +69,12 @@ body {
   padding-bottom: 10px;
 }
 
+.search-btn {
+  margin-bottom: -15px;
+}
+
 .btn-default.home {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
   background-color: $dark-grey;
 }
