@@ -8,13 +8,19 @@
   </div>
 </div>
 
+
+<% content_for(:js) do %>
+
 <!-- JQuery -->
 <script src="//cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
 <!-- Typahead.js is used to display the auto-completion menu -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
 <!-- Algolia -->
 <script src="//cdn.jsdelivr.net/algoliasearch/latest/algoliasearch.min.js"></script>
+
+
 <script type="text/javascript">
+
   $(document).ready(function() {
     // Replace the following values by your ApplicationID and ApiKey.
     var algolia = new AlgoliaSearch('<%= ENV['ALGOLIA_SEARCH_ID'] %>', '<%= ENV['ALGOLIA_SEARCH_API_KEY'] %>');
@@ -42,3 +48,4 @@
     });
   });
 </script>
+<% end %>
