@@ -11,7 +11,7 @@ class Line < ActiveRecord::Base
 
 
   algoliasearch index_name: "#{self}#{ENV['ALGOLIA_SUFFIX']}" do
-    attributesToIndex ['place', 'address', 'city']
+    attributesToIndex ['place', 'address', 'city', 'date', 'event']
   end
 
 end
