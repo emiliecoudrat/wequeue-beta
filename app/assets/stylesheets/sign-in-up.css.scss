@@ -98,9 +98,9 @@ p {
   background: white;
   font-weight: 100;
   background-color: #FFD620;
-  padding: 20px;
-  height: 210px;
-  width: 210px;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
 /*  margin-left: 10px;
   margin-right: 10px;*/
@@ -111,5 +111,19 @@ p {
 }
 
 #definition {
+  padding-bottom: 20px;
+}
+
+.feature p {
+  color: black;
+}
+
+#logo {
+  padding: 10px;
+}
+
+.fa-paper-plane{
+  color: $yellow;
+  padding-top: 30px;
   padding-bottom: 20px;
 }
