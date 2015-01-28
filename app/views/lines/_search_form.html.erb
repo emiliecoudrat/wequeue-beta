@@ -12,8 +12,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
 <!-- Algolia -->
 <script src="//cdn.jsdelivr.net/algoliasearch/latest/algoliasearch.min.js"></script>
-
-
 <script type="text/javascript">
 
   $(document).ready(function() {
@@ -26,14 +24,26 @@
     $('#query').typeahead({ hint: false }, {
       source: index.ttAdapter({ hitsPerPage: 5 }),
       displayKey: function(hit) {
-        return hit.place + ' | ' + hit.occasion;
+        var occasionOutput;
+        if(hit.occasion) {
+          occasionOutput = ' | ' + hit.occasion;
+        } else {
+          occasionOutput = '';
+       }
+        return hit.place + occasionOutput;
       },
       templates: {
         suggestion: function(hit) {
           // render the hit
+          var occasionOutput;
+          if( hit.occasion) {
+            occasionOutput = ' | ' + hit._highlightResult.occasion.value;
+          } else {
+            occasionOutput = '';
+          }
           return '<div class="hit">' +
             '<div class="name">' +
-              hit._highlightResult.place.value + ' | ' + hit._highlightResult.occasion.value +
+              hit._highlightResult.place.value +  occasionOutput +
             '</div>' +
           '</div>';
         }
