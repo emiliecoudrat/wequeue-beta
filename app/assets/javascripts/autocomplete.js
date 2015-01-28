@@ -1,7 +1,9 @@
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
-  var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode','establishment'] });
-  google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+  if (element) {
+    var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode','establishment'] });
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+  }
 }
 
 google.maps.event.addDomListener(window, 'load', function() {
@@ -30,10 +32,8 @@ function onPlaceChanged() {
     }
   }
 
-
-$('#user_input_autocomplete_establishment').val(place.name);
-$('#address').val(street_number + ' ' + route);
-$('#postal_code').val(postal_code);
-$('#locality').val(locality);
-
+  $('#user_input_autocomplete_establishment').val(place.name);
+  $('#address').val(street_number + ' ' + route);
+  $('#postal_code').val(postal_code);
+  $('#locality').val(locality);
 }
