@@ -32,10 +32,8 @@ function onPlaceChanged() {
     }
   }
 
-
-$('#user_input_autocomplete_establishment').val(place.name);
-$('#address').val(street_number + ' ' + route);
-$('#postal_code').val(postal_code);
-$('#locality').val(locality);
-
+  $('#user_input_autocomplete_establishment').val(place.name);
+  $('#address').val(street_number + ' ' + route);
+  $('#postal_code').val(postal_code);
+  $('#locality').val(locality);
 }
