@@ -13,8 +13,16 @@ h1 {
 }
 
 h4 {
+  font-family: $font;
   color: white;
+  font-size: 2rem;
   text-shadow: 1px 0.8px 3px black;
+}
+
+p {
+  font-family: $font;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .weq {
@@ -53,6 +61,8 @@ h4 {
   background-image: image-url('queue.jpg');
   background-size: cover;
   background-position: top right;
+  padding-top : 50px;
+  padding-bottom: 80px;
 }
 
 .devise {
@@ -78,3 +88,42 @@ h4 {
   border-color: white;
 }
 
+.prez {
+  background-color: #1F1D1D;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.feature {
+  background: white;
+  font-weight: 100;
+  background-color: #FFD620;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+/*  margin-left: 10px;
+  margin-right: 10px;*/
+  margin: auto;
+  padding-top: 40px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#definition {
+  padding-bottom: 20px;
+}
+
+.feature p {
+  color: black;
+}
+
+#logo {
+  padding: 10px;
+}
+
+.fa-paper-plane{
+  color: $yellow;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
