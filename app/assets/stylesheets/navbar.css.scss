@@ -2,6 +2,7 @@ $bg: #6BC5C3;
 $color: #F2EFC2;
 $yellow : #FFC107;
 $title-font:'Roboto', sans-serif;
+$font: 'Open Sans', sans-serif;
 
 .navbar-wagon {
   background: rgba($yellow, 0.9);
@@ -30,4 +31,27 @@ $title-font:'Roboto', sans-serif;
 
 #bonjour {
   color: #FFFFFF;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 800px) { /*pour défaire un bootstrap*/
+  .navbar-nav {
+    float: none;
+  }
+  .navbar-collapse {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .navbar-collapse li {
+    padding: 5px;
+    font-weight: 700px;
+  }
+
+  .navbar-collapse li i {
+    font-family: $font;
+    font-weight: 700;
+    color: white;
+  }
 }
