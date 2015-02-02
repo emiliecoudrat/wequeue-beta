@@ -1,5 +1,5 @@
 $title-font: 'Roboto', sans-serif;
-$yellow : #FFD620;
+$yellow : #FFC107;
 $light-grey: #7F7F7F;
 $green : #6BC5C3;
 $font: 'Open Sans', sans-serif;
@@ -97,7 +97,7 @@ p {
 .feature {
   background: white;
   font-weight: 100;
-  background-color: #FFD620;
+  background-color: $yellow;
   padding: 20px;
   height: 200px;
   width: 200px;

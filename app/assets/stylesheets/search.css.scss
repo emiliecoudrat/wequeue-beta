@@ -1,4 +1,4 @@
-.twitter-typeahead { width: 70%; }
+.twitter-typeahead { width: 100%; }
 .twitter-typeahead .tt-input, .twitter-typeahead .tt-hint { width: 70%; margin: 0px; padding: 8px 12px; border: 2px solid #ccc; outline: none; }
 .twitter-typeahead .tt-input:focus { border: 2px solid #0097cf; }
 .twitter-typeahead .tt-hint { color: #999; }
@@ -21,6 +21,11 @@
 .search {
   padding-top: 10px;
   padding-bottom: 10px;
+  margin: auto;
+}
+
+.search .input-group {
+  margin: auto;
 }
 
 #query {

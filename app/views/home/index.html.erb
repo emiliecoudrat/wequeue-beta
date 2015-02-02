@@ -2,11 +2,11 @@
   <div class= "row">
 
     <div class="col-xs-offset-1 col-xs-10">
-      <h1 class="title">Les dernières files d'attente en cours.</h1>
+      <h1 class="title">- LES DERNIERES FILES D'ATTENTE EN COURS -</h1>
 
-      <div class="search text-center">
-      <p>Recherchez une file d'attente par lieu ou par événement :</p>
-      <%= render 'lines/search_form'%>
+      <div class="search">
+        <p>Recherchez une file d'attente par lieu ou par événement :</p>
+        <%= render 'lines/search_form'%>
       </div>
 
     </div>
@@ -36,7 +36,7 @@
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-6" id="text">
 
               le <%= post.created_at.strftime('%d/%m/%Y') %>
-              à <%= post.created_at.strftime('%Hh%M') %>, le Queuer <%= post.user.first_name %> a indiqué : "<%= post.description %>"
+              à <%= post.created_at.strftime('%Hh%M') %>, <%= post.user.first_name %> a indiqué : "<%= post.description %>"
               <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
                 <i class="fa fa-comment-o fa-2x"></i>
               <% end %>

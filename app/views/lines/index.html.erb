@@ -2,9 +2,10 @@
   <div class= "row">
 
     <div class= "col-xs-12">
-      <h1 class= "text-center title">Toutes les files d'attente en cours.</h1>
+      <h1 class= "text-center title">- TOUTES LES FILES D'ATTENTE EN COURS -</h1>
 
-      <div class="search">
+      <div class="search text-center">
+        <p>Recherchez une file d'attente par lieu ou par événement :</p>
         <%= render 'lines/search_form'%>
       </div>
 
@@ -24,10 +25,14 @@
 
 
             <div class='btn btn-default time-btn'>
-              <%= link_to "Voir le temps d'attente", line_posts_path(line) %>
+              <%= link_to line_posts_path(line) do %>
+                <i class="fa fa-eye"></i> Voir le temps d'attente
+              <% end %>
             </div>
             <div class='btn btn-default time-btn'>
-              <%= link_to "Indiquer un temps d'attente", new_line_post_path(line) %>
+              <%= link_to new_line_post_path(line) do %>
+                <i class="fa fa-pencil"></i> Indiquer un temps d'attente
+              <% end %>
             </div>
 
 
