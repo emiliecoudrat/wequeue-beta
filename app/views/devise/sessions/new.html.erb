@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
 
-    <h1 class="text-center weq">weQueue <%= image_tag("logo.png", width: "70px", id:"logo") %></h1>
+    <h1 class="text-center weq">weQueue <%= image_tag("marker.png", width: "70px", id:"logo") %></h1>
 
       <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
 
-        <h4 class="text-center">L'info en temps réel sur toutes les files d'attente.</h4>
+        <h4 class="text-center">L'info en temps réel de toutes les files d'attente.</h4>
 
         <div class= "signin">
         <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -57,8 +57,7 @@
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10">
       <div id="definition">
-        <p class="text-center">Expositions, ventes privées, démarches administratives, hotlines... weQueue permet, grâce à notre communauté de Queuers, de partager précisément les temps d'attente.</p>
-        <p class="text-center"> Rejoignez-nous pour éviter les mauvaises suprises de la file d'attente !</p>
+        <p class="text-center">Expositions, ventes privées, démarches administratives... obtenez la meilleure info sur les files d'attente et gagnez du temps grâce à notre communauté de Queuers.</p>
       </div>
     </div>
   </div>
@@ -67,8 +66,16 @@
 
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="feature">
+        <%= image_tag("piple.png", width: "90px", id:"logo") %>
+        <p>Une communauté active</p>
+      </div>
+      <br>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="feature">
         <%= image_tag("queue.png", width: "80px", id:"logo") %>
-        <p>Localisez une file d'attente</p>
+        <p>Des files d'attente géolocalisées</p>
       </div>
       <br>
     </div>
@@ -76,18 +83,14 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="feature">
         <%= image_tag("time.png", width: "80px", id:"logo") %>
-        <p>Donnez des infos sur la file d'attente</p>
-      </div>
-      <br>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="feature">
-        <%= image_tag("smiley.png", width: "80px", id:"logo") %>
-        <p>Evitez les files d'attente.</p>
+        <p>Des infos en temps réel</p>
       </div>
     </div>
 
+  </div>
+
+  <div class="text-center moto">
+    <p>Queue less, live more.</p>
   </div>
 
   <div class="text-center">

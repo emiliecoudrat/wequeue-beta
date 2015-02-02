@@ -5,6 +5,7 @@ $color: #F7F7F7;
 $yellow : #FFD620;
 $dark-grey : #676767;
 $title-font:'Pacifico', cursive;
+$font: 'Open Sans', sans-serif;
 
 // body {
 //   background-color: $color;
@@ -97,4 +98,9 @@ $title-font:'Pacifico', cursive;
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+.search p {
+  font-family: $font;
+  color: $yellow;
 }

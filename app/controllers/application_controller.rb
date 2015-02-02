@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def layout_by_resource
-    if devise_controller? && action_name == "new"
+    if devise_controller?
       "sign"
     else
       "application"
