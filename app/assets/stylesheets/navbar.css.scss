@@ -1,7 +1,7 @@
 $bg: #6BC5C3;
 $color: #F2EFC2;
-$yellow : #FFD620;
-$title-font:'Pacifico', cursive;
+$yellow : #FFC107;
+$title-font:'Roboto', sans-serif;
 
 .navbar-wagon {
   background: rgba($yellow, 0.9);
@@ -21,7 +21,7 @@ $title-font:'Pacifico', cursive;
   margin-left: auto;
   font-family: $title-font;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .dropdown-toggle li {

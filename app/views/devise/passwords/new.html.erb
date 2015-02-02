@@ -1,40 +1,42 @@
-<div class="container">
-  <div class="row">
+<div class="pic", style="height:700px">
+  <div class="container">
+    <div class="row">
 
-  <h1 class="text-center weq">weQueue <%= image_tag("logo.png", width: "70px") %></h1>
+    <h1 class="text-center weq">weQueue <%= image_tag("marker.png", width: "70px", id:"logo") %></h1>
 
-    <h4 class="text-center">Mot de passe oublié?</h4>
+      <h4 class="text-center">Mot de passe oublié ?</h4>
 
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4">
 
-      <div class="signin">
-        <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-          <%= devise_error_messages! %>
+        <div class="signin">
+          <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= devise_error_messages! %>
 
-          <div class="field">
-            <%= f.email_field :email, autofocus: true %>
-          </div>
+            <div class="field">
+              <%= f.email_field :email, autofocus: true %>
+            </div>
 
-          <div class="actions text-center">
-            <%= f.submit "Reset" %>
-          </div>
-        <% end %>
-
-        <br>
-
-        <div class= "text-center">
-          <div class= "btn btn-default devise">
-            <%= link_to "S'inscrire", new_user_session_path %>
-          </div>
-
-          <div class="btn btn-default" id= "fb">
-            <%= link_to(user_omniauth_authorize_path(:facebook)) do %>
-            Se connecter avec <i class="fa fa-facebook"></i>
+            <div class="actions text-center">
+              <%= f.submit "Reset" %>
+            </div>
           <% end %>
+
+          <br>
+
+          <div class= "text-center">
+            <div class= "btn btn-default devise">
+              <%= link_to "S'inscrire", new_user_session_path %>
+            </div>
+
+            <div class="btn btn-default" id= "fb">
+              <%= link_to(user_omniauth_authorize_path(:facebook)) do %>
+              Se connecter avec <i class="fa fa-facebook"></i>
+            <% end %>
+            </div>
           </div>
-        </div>
+
+      </div>
 
     </div>
-
   </div>
 </div>

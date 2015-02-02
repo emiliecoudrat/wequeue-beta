@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $color: #F7F7F7;
-$yellow : #FFD620;
+$yellow : #FFC107;
 $dark-grey : #676767;
-$title-font:'Pacifico', cursive;
+$title-font: 'Roboto', sans-serif;
+$font: 'Open Sans', sans-serif;
 
 // body {
 //   background-color: $color;
@@ -97,4 +98,18 @@ $title-font:'Pacifico', cursive;
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+.search p {
+  font-size: 1.5rem;
+  font-family: $font;
+  color: white;
+  font-weight: 700;
+  // text-shadow: 0.5px 0.5px 0.5px #676767;
+}
+
+.search {
+  width: 80%;
+  background-color: $yellow;
+  border-radius: 10px;
 }
