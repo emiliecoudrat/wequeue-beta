@@ -33,16 +33,16 @@
 
       <% end %>
 
-      <div class="btn btn-default home">
-        <%= link_to "Voir toutes les files d'attente", lines_path %>
-      </div>
-
-
-      <div class="btn btn-default home">
-        <%= link_to "Page d'accueil", root_path %>
-      </div>
-
     </div>
+
+    <div class="text-center">
+      <div class="btn btn-default home">
+        <%= link_to lines_path do %>
+          <i class="fa fa-eye"></i> Voir toutes les files d'attente
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
 
