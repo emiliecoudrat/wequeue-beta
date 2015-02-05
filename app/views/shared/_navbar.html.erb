@@ -16,21 +16,21 @@
 
       <ul class="nav navbar-nav">
 
-        <div class="visible-xs-block">
+        <div class="visible-xs-block mon-menu">
           <% if user_signed_in? %>
             <li>
               <%= link_to profile_path(current_user) do %>
-                <i class="fa fa-user"> Mon profile</i>
+                <i class="fa fa-user"><span> Mon profile</span></i>
               <% end %>
             </li>
             <li>
               <%= mail_to "hello@wequeue.com" do %>
-                <i class="fa fa-paper-plane"> Nous contacter</i>
+                <i class="fa fa-paper-plane"><span> Nous contacter</span></i>
               <% end %>
             </li>
             <li>
               <%= link_to(destroy_user_session_path, method: 'delete') do %>
-                <i class="fa fa-sign-out"> Se déconnecter</i>
+                <i class="fa fa-sign-out"><span> Se déconnecter</span></i>
               <% end %>
             </li>
           <% end %>
@@ -44,27 +44,27 @@
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <ul class= "list-inline">
                 <li>
-                  Bonjour <%= current_user.first_name %>
+                  <p> Bonjour <%= current_user.first_name %></p>
                 </li>
                 <li>
-                  Settings <span class="caret"></span>
+                  <i class="fa fa-cog"></i> <span class="caret"></span>
                 </li>
               </ul>
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
                 <%= link_to profile_path(current_user) do %>
-                  <i class="fa fa-user"> Mon profile</i>
+                  <i class="fa fa-user"><span> Mon profile </span></i>
                 <% end %>
               </li>
               <li>
                 <%= mail_to "hello@wequeue.com" do %>
-                  <i class="fa fa-paper-plane"> Nous contacter</i>
+                  <i class="fa fa-paper-plane"><span> Nous contacter </span></i>
                 <% end %>
               </li>
               <li>
                 <%= link_to(destroy_user_session_path, method: 'delete') do %>
-                  <i class="fa fa-sign-out"> Se déconnecter</i>
+                  <i class="fa fa-sign-out"><span> Se déconnecter </span></i>
                 <% end %>
               </li>
             </ul>

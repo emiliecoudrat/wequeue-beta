@@ -1,7 +1,7 @@
 <div class= "container text-center margin">
   <div class= "row">
 
-    <div class="col-xs-offset-1 col-xs-10">
+    <div class="col-xs-12">
 
       <div class="search">
         <p>Recherchez une file d'attente :</p>
@@ -19,7 +19,7 @@
 
       <h1 class="title">- LES DERNIERES FILES D'ATTENTE EN COURS -</h1>
 
-      <div id="map" class= "text-center" style="width: 80%; height: 200px; margin:auto"></div>
+<!--       <div id="map" class= "text-center" style="width: 80%; height: 200px; margin:auto"></div>
 
       <% content_for(:js) do %>
         <%= javascript_tag do %>
@@ -32,7 +32,7 @@
             });
           })
         <% end %>
-      <% end %>
+      <% end %> -->
 
       <% @lines.each do |line| %>
 
@@ -64,7 +64,7 @@
             </div>
             <div class="col-xs-offset-1 col-xs-10 col-sm-4">
                 <% if post.picture.exists? %>
-                <%= image_tag post.picture.url(:thumb), class: "img-thumbnail" %>
+                <%= image_tag post.picture.url(:thumb), class: "img-thumbnail", id: "image" %>
               <% end %>
             </div>
           </div>
@@ -81,12 +81,6 @@
         <br>
       </div>
     <% end %>
-
-    <div class="btn btn-default home">
-      <%= link_to new_line_path do %>
-        <i class="fa fa-pencil"></i> Créer une nouvelle file d'attente
-      <% end %>
-    </div>
 
     <div class="btn btn-default home">
       <%= link_to lines_path do %>

@@ -1,5 +1,5 @@
 $bg: #6BC5C3;
-$color: #F2EFC2;
+$color: white;
 $yellow : #FFC107;
 $title-font:'Roboto', sans-serif;
 $font: 'Open Sans', sans-serif;
@@ -14,6 +14,12 @@ $font: 'Open Sans', sans-serif;
 
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: $yellow;
+}
+
+.dropdown-menu li span {
+  font-family: $font;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 #wequeue {
@@ -41,17 +47,16 @@ $font: 'Open Sans', sans-serif;
   }
   .navbar-collapse {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .navbar-collapse li {
-    padding: 5px;
-    font-weight: 700px;
-  }
-
-  .navbar-collapse li i {
+  .mon-menu span {
     font-family: $font;
     font-weight: 700;
-    color: white;
   }
+
+  .mon-menu li {
+    margin-top: 10px;
+  }
+
 }
