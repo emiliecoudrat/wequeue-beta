@@ -4,23 +4,29 @@
       <%= bootstrap_form_for([@post, @comment], class: 'form') do |f| %>
 
         <div class="field">
-          <%= f.text_area :content, label: "140 caractères max." %>
+          <%= f.text_area :content, label: "Posez votre question" %>
         </div>
 
         <div class="actions text-center">
           <%= f.submit "Je valide" %>
         </div>
 
-      <% end %>
+        <% end %>
 
-      <div class="btn btn-default home">
-        <%= link_to "Voir toutes les files d'attente", lines_path %>
-      </div>
+        <div class='text-center'>
+          <div class="btn btn-default home">
+            <%= link_to lines_path do %>
+              <i class="fa fa-eye"></i> Voir toutes les files d'attente
+            <% end %>
+          </div>
 
 
-      <div class="btn btn-default home">
-        <%= link_to "Page d'accueil", root_path %>
-      </div>
+          <div class="btn btn-default home">
+            <%= link_to root_path do %>
+            <i class="fa fa-home"></i>  Accueil
+            <% end %>
+          </div>
+        </div>
 
     </div>
   </div>

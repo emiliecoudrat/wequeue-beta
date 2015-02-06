@@ -4,35 +4,44 @@
       <h1 class="title text-center">
       <div><%= @line.date.strftime('%d-%m-%Y') %> || <%= @line.place %></div>
       <div>
-        <% if @line.event.nil? %>
+        <% if @line.event.length == 0 %>
           <% else %>
-          Evénement: <%= @line.event %>
+          "<%= @line.event %>"
         <% end %>
       </div>
       </h1>
 
-      <% @line.posts.all.each do |post| %>
-        <div class='row'>
+      <div class="text-center">
+        <div class='btn btn-default'>
+          <%= link_to new_line_post_path(@line) do %>
+            Mettre à jour le temps <i class="fa fa-clock-o fa-2x"></i>
+          <% end %>
+        </div>
+      </div>
+
+      <br>
+
+      <% @line.posts.order('posts.created_at DESC').all.each do |post| %>
+
+        <div class='row' id='line-posts'>
+          <div class='col-xs-12 col-md-6 text-center' id='line-comment'>
+            Le <%= post.created_at.strftime('%d/%m/%Y') %>, à <%= post.created_at.strftime('%Hh%M') %>,
+            <%= post.user.first_name %> :
+            "<%= post.description %>"
+
+            <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
+              <i class="fa fa-comment-o fa-2x"></i>
+            <% end %>
+
+          </div>
+
+          <br>
+
           <div class='col-xs-12 col-md-6 text-center'>
             <% if post.picture.exists? %>
               <%= image_tag post.picture.url(:medium), class: "img-thumbnail" %>
             <% end %>
           </div>
-          <br>
-          <div class='col-xs-12 col-md-6 text-center' id='line-comment'>
-            Le <%= post.created_at.strftime('%d/%m/%Y') %>, à <%= post.created_at.strftime('%Hh%M') %>,
-            <%= post.user.first_name %> a écrit :
-            <%= post.description %>
-
-            <%= link_to(new_post_comment_path(post), :title => "Parler à ce Queuer") do %>
-              <i class="fa fa-comment-o fa-2x"></i>
-            <div class='btn btn-default time-btn'>
-              <%= link_to new_line_post_path(@line) do %>
-                Mettre à jour le temps <i class="fa fa-clock-o fa-2x"></i>
-              <% end %>
-            </div>
-          </div>
-          <% end %>
 
         </div>
       <% end %>
@@ -47,7 +56,7 @@
 
       <br>
 
-      <div id="map" class= "texte-center" style="width: 90%; height: 300px;"></div>
+      <div id="map" class= "text-center" style="width: 90%; height: 300px;"></div>
 
       <% content_for(:js) do %>
         <%= javascript_tag do %>

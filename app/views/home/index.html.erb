@@ -1,17 +1,38 @@
 <div class= "container text-center margin">
   <div class= "row">
 
-    <div class="col-xs-offset-1 col-xs-10">
-      <h1 class="title">- LES DERNIERES FILES D'ATTENTE EN COURS -</h1>
+    <div class="col-xs-12">
 
       <div class="search">
-        <p>Recherchez une file d'attente par lieu ou par événement :</p>
+        <p>Recherchez une file d'attente :</p>
         <%= render 'lines/search_form'%>
+        <p>ou</p>
+        <p>Créez une nouvelle file d'attente :</p>
+        <div>
+          <%= link_to image_tag("logo.png", id: "new", :title => "Créer une file"), new_line_path %>
+        </div>
       </div>
 
     </div>
 
     <div class='col-xs-12' >
+
+      <h1 class="title">- LES DERNIERES FILES D'ATTENTE EN COURS -</h1>
+
+<!--       <div id="map" class= "text-center" style="width: 80%; height: 200px; margin:auto"></div>
+
+      <% content_for(:js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
+      <% end %> -->
 
       <% @lines.each do |line| %>
 
@@ -21,7 +42,7 @@
             <%= line.date.strftime('%d-%m-%Y') %>
           </div>
         </div>
-        <% if line.event.nil? %>
+        <% if line.event.length == 0 %>
           <% else %>
           <div class="list-inline" id="events">
             Evènement : <%= line.event %>
@@ -43,7 +64,7 @@
             </div>
             <div class="col-xs-offset-1 col-xs-10 col-sm-4">
                 <% if post.picture.exists? %>
-                <%= image_tag post.picture.url(:thumb), class: "img-thumbnail" %>
+                <%= image_tag post.picture.url(:thumb), class: "img-thumbnail", id: "image" %>
               <% end %>
             </div>
           </div>
@@ -60,12 +81,6 @@
         <br>
       </div>
     <% end %>
-
-    <div class="btn btn-default home">
-      <%= link_to new_line_path do %>
-        <i class="fa fa-pencil"></i> Créer une nouvelle file d'attente
-      <% end %>
-    </div>
 
     <div class="btn btn-default home">
       <%= link_to lines_path do %>

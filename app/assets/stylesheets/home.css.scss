@@ -7,17 +7,17 @@ $dark-grey : #676767;
 $title-font: 'Roboto', sans-serif;
 $font: 'Open Sans', sans-serif;
 
-// body {
-//   background-color: $color;
-//   margin-top: 50px;
-//   margin-bottom: 80px;
-// }
+body {
+  background-image: image-url('pattern.png');
+ }
 
 .title {
   font-size: 2.5rem;
   color: $dark-grey;
   text-shadow: none;
   margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: $title-font;
 }
 
 #events {
@@ -75,7 +75,7 @@ $font: 'Open Sans', sans-serif;
 }
 
 .btn-default.home {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
   background-color: $dark-grey;
 }
@@ -86,19 +86,17 @@ $font: 'Open Sans', sans-serif;
 }
 
 #text {
-  padding-top: 20px;
+  margin-top: 20px;
+  background: rgba($yellow, 0.1);
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .fa-comment-o {
   color: $yellow;
 }
 
-#line-comment {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
 
 .search p {
   font-size: 1.5rem;
@@ -110,6 +108,17 @@ $font: 'Open Sans', sans-serif;
 
 .search {
   width: 80%;
-  background-color: $yellow;
+  background: rgba(#607D8B, 0.7);
   border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0.5px 0.5px 0.5px $dark-grey;
+}
+
+#new {
+  height: 40px;
+  margin-top: 0px;
+}
+
+#image {
+  margin-top: 5px;
 }

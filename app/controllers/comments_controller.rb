@@ -14,10 +14,11 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @line = Line.find(params[:line_id])
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_comments_path, notice: "Bravo, votre comment a été pris en compte"
+      redirect_to line_path(@line), notice: "Bravo, votre comment a été pris en compte"
     else
       render :new, notice: "Oups, réessayez !"
     end

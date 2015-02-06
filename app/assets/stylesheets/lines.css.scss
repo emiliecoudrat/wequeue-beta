@@ -1,3 +1,26 @@
 // Place all the styles related to the lines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color: #F7F7F7;
+$yellow : #FFC107;
+$dark-grey : #676767;
+$title-font: 'Roboto', sans-serif;
+$font: 'Open Sans', sans-serif;
+
+#line-comment {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#line-posts {
+  background: rgba($yellow, 0.1);
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  box-shadow: 0.1px 0.1px 0.1px $dark-grey;
+}
+
+.place p {
+  color: black;
+}

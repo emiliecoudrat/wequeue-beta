@@ -1,7 +1,8 @@
 $bg: #6BC5C3;
-$color: #F2EFC2;
+$color: white;
 $yellow : #FFC107;
 $title-font:'Roboto', sans-serif;
+$font: 'Open Sans', sans-serif;
 
 .navbar-wagon {
   background: rgba($yellow, 0.9);
@@ -13,6 +14,12 @@ $title-font:'Roboto', sans-serif;
 
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: $yellow;
+}
+
+.dropdown-menu li span {
+  font-family: $font;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 #wequeue {
@@ -30,4 +37,26 @@ $title-font:'Roboto', sans-serif;
 
 #bonjour {
   color: #FFFFFF;
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 800px) { /*pour défaire un bootstrap*/
+  .navbar-nav {
+    float: none;
+  }
+  .navbar-collapse {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .mon-menu span {
+    font-family: $font;
+    font-weight: 700;
+  }
+
+  .mon-menu li {
+    margin-top: 10px;
+  }
+
 }

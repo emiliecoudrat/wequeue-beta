@@ -6,7 +6,7 @@
         <%= f.hidden_field :line_id %>
 
         <div class="field">
-          <%= f.text_area :description, label: "Le temps d'attente selon vous? Une info utile?" %>
+          <%= f.text_area :description, label: "Le temps d'attente selon vous ? Une info utile ?" %>
         </div>
 
         <div class="field">
@@ -20,11 +20,15 @@
       <% end %>
 
       <div class="btn btn-default home">
-        <%= link_to "Voir toutes les files d'attente", lines_path %>
+        <%= link_to lines_path do %>
+          <i class="fa fa-eye"></i> Voir toutes les files d'attente
+        <% end %>
       </div>
 
       <div class="btn btn-default home">
-        <%= link_to "Page d'accueil", root_path %>
+        <%= link_to root_path do %>
+        <i class="fa fa-home"></i>  Accueil
+        <% end %>
       </div>
 
     </div>

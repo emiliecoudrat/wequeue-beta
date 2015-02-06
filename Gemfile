@@ -54,6 +54,8 @@ gem "gmaps4rails"
 gem "rails-assets-underscore"
 
 gem "algoliasearch-rails"
+
+gem 'bourbon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

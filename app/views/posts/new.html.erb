@@ -3,9 +3,9 @@
   <h1 class="text-center title">Indiquez le temps d'attente pour <%= @line.place %> </h1>
 
   <div>
-    <% if @line.event.nil? %>
+    <% if @line.event.length == 0 %>
       <% else %>
-       <h1 class= "text-center title"> pour l'événement <%= @line.event %> </h1>
+       <h1 class= "text-center title"> pour l'événement "<%= @line.event %>"</h1>
     <% end %>
   </div>
 
