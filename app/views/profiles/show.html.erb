@@ -4,10 +4,12 @@
   <div class="row">
     <div class="col-xs-12">
 
+    <div class="profile">
+
       <br>
-      <%= t '.first_name :' %> <%= @user.first_name %></p>
-      <%= t '.last_name :' %> <%= @user.last_name %></p>
-      <%= t '.email :' %> <%= @user.email %></p>
+      <p>Prénom : <%= @user.first_name %></p>
+      <p>Nom : <%= @user.last_name %></p>
+      <p>email : <%= @user.email %></p>
 
       <%= link_to "Changer mon mot de passe",  edit_pwd_profile_path %>
 
@@ -19,6 +21,7 @@
 
     <% end %>
 
+    </div>
     </div>
   </div>
 </div>

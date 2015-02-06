@@ -2,21 +2,27 @@
   <div class= "row">
 
     <div class= "col-xs-12">
-      <h1 class= "text-center title">- TOUTES LES FILES D'ATTENTE EN COURS -</h1>
 
       <div class="search text-center">
-        <p>Recherchez une file d'attente par lieu ou par événement :</p>
+        <p>Recherchez une file d'attente :</p>
         <%= render 'lines/search_form'%>
+        <p>ou</p>
+        <p>Créez une nouvelle file d'attente :</p>
+        <div>
+          <%= link_to image_tag("logo.png", id: "new", :title => "Créer une file"), new_line_path %>
+        </div>
       </div>
+
+      <h1 class= "text-center title">- TOUTES LES FILES D'ATTENTE EN COURS -</h1>
 
       <% @lines.each do |line| %>
 
         <div class="queue text-center">
           <div class= "place">
             <%= link_to line.place, line_path(line) %> | <%= line.city %>
-            <% if line.event.nil? %>
+            <% if line.event.length == 0 %>
               <% else %>
-                <p> pour l'événement <%= line.event %> </p>
+                <p>"<%= line.event %>"</p>
               <% end %>
             <div class="date">
               <%= line.date.strftime('%d-%m-%Y') %>
@@ -42,12 +48,9 @@
 
       <div class= "text-center">
         <div class="btn btn-default home">
-          <%= link_to "Je crée une nouvelle file d'attente", new_line_path %>
-        </div>
-
-
-        <div class="btn btn-default home">
-          <%= link_to "Page d'accueil", root_path %>
+          <%= link_to root_path do %>
+          <i class="fa fa-home"></i>  Accueil
+          <% end %>
         </div>
       </div>
 

@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @line = Line.find(params[:line_id])
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
