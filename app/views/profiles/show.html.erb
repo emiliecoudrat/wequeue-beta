@@ -1,27 +1,27 @@
 
 <div class="container text-center margin">
-  <h1 class="text-center"><%= @user.name %> </h1>
   <div class="row">
     <div class="col-xs-12">
 
-    <div class="profile">
-
+      <div class="profile text-center">
       <br>
-      <p>Prénom : <%= @user.first_name %></p>
-      <p>Nom : <%= @user.last_name %></p>
-      <p>email : <%= @user.email %></p>
+        <p><span>Prénom :</span> <%= @user.first_name %></p>
+        <p><span>Nom :</span> <%= @user.last_name %></p>
+        <p><span>email :</span> <%= @user.email %></p>
+      </div>
 
-      <%= link_to "Changer mon mot de passe",  edit_pwd_profile_path %>
+      <div class="update">
+        <% if @user == current_user %>
+          <%= link_to(edit_profile_path, class: "btn btn-default update-btn") do %>
+            <p><i class="fa fa-pencil">   Modifier mon profile</i></p>
+          <% end %>
+        <% end %>
+      </div>
 
-      <% if @user == current_user %>
+      <div class="pwd-change">
+        <p><%= link_to "Changer mon mot de passe",  edit_pwd_profile_path %></p>
+      </div>
 
-      <%= link_to(edit_profile_path, class: "btn btn-default") do %>
-        <i class="fa fa-pencil">   Update profile</i>
-      <% end %>
-
-    <% end %>
-
-    </div>
     </div>
   </div>
 </div>
