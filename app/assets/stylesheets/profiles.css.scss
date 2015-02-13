@@ -6,8 +6,49 @@ $yellow : #FFC107;
 $dark-grey : #676767;
 $title-font: 'Roboto', sans-serif;
 $font: 'Open Sans', sans-serif;
+$blue-grey: #607D8B;
 
+.profile {
+  width: 60%;
+  background: rgba($blue-grey, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0.5px 0.5px 0.5px $dark-grey;
+  margin: auto;
+  margin-top: 40px;
+}
 
-div.profile p {
+.profile p {
+  color: white;
+  font-family: $font;
+}
+
+.profile p span {
+  font-weight: 700;
+}
+
+.pwd-change {
+  margin-top: 10px;
+}
+
+.pwd-change a {
+  text-decoration: none;
   color: black;
+  font-size: 1.3rem;
+}
+
+.pwd-change a:hover {
+  color: $blue-grey;
+}
+
+.update-btn p {
+  margin: 0px;
+}
+
+#ok input {
+  color: white;
+}
+
+.pwd-form {
+  margin-top: 30px;
 }

@@ -1,20 +1,20 @@
 <div class="container margin">
-  <h2 class="text-center">Votre profil de Queuer</h2>
+  <h1 class="text-center title">Votre profile</h1>
   <div class="row">
 
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
       <%= bootstrap_form_for(@user, url: profile_path) do |f| %>
 
         <div class="field">
-          <%= f.text_field :first_name %>
+          <p><%= f.text_field :first_name, label:"Prénom" %></p>
         </div>
 
         <div class="field">
-          <%= f.text_field :last_name %>
+          <p><%= f.text_field :last_name, label:"Nom" %></p>
         </div>
 
-        <div class="text-center"><%= f.submit "Update profile" %></div>
-        <% end %>
+        <div class="text-center"; id="ok"><%= f.submit "Valider mon profile" %></div>
+      <% end %>
 
     </div>
 
